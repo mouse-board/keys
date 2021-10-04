@@ -16,6 +16,8 @@ https://rlog.rgtti.com/2014/05/01/how-to-modify-a-keyboard-layout-in-linux/ <br>
 ~~~
 // in /usr/share/X11/xkb/symbols/tr
 
+// { [ key, shift+key, altgr+key, shift+altgr+key ] }
+
 // add this code after   xkb_symbols "basic" { ... };
 // my edit
 partial
@@ -60,3 +62,13 @@ my_layout       tr: Turkish (i-idotless and scedilla-comma swap)
 
 It's done !
 Restart your pc and configure settings
+
+# Added altgr+ijkl cursor move
+~~~
+key <AD08>  { type[group1] = "FOUR_LEVEL_ALPHABETIC",
+              [         i,          I,            Up,   Icircumflex ] };
+
+key <AC07>  { [         j,          J,          Left,    VoidSymbol ] };
+key <AC08>  { [         k,          K,          Down,    VoidSymbol ] };
+key <AC09>  { [         l,          L,         Right,    VoidSymbol ] };
+~~~
